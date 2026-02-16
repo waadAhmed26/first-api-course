@@ -102,11 +102,9 @@ await app.MigrateIdentityDatabaseAsync();
 await app.SeedIdentityDatabaseAsync();
 
 // ================= Middleware =================
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -114,3 +112,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
